@@ -1,0 +1,95 @@
+mybatis-plus:
+  global-config:
+    #    逻辑删除
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+    banner: false
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+#  mybatisPlus
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/star_team
+    username: root
+    password: 123456
+  application:
+    name: yupao-backend
+  main:
+    banner-mode: off
+    #swagger
+  swagger2:
+    enabled: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  profiles:
+    active: dev
+  # session 失效时间（分钟）
+  session:
+    timeout: 86400
+    store-type: redis
+  #    redis
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        domain: localhost
+# 日志配置
+logging:
+  # 日志级别
+  level:
+    root: info
+    com.yupi.yupao: info
+  file:
+    # 日志文件名格式
+    name: 'logs/${spring.application.name}.log'
+  pattern:
+    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+    # 日志记录格式[组件名称] [时间戳] [日志级别] [类名.方法名] [消息文本]
+    file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+  logback:
+    rollingpolicy:
+      # 根据文件大小归档，超过2KB自动归档，次日启动服务时也会自动归档
+      file-name-pattern: 'logs/%d{yyyyMMdd}/${spring.application.name}.out.log.%d{yyyy-MM-dd}.%i.gz'
+      # 最大日志文件大小(默认为10MB，这里为了测试归档，暂时设置为2KB)
+      max-file-size: 10MB
+      # 要保留的日志备份的总大小(默认为0B)
+      total-size-cap: 128MB
+      # 保存存档日志文件的最大天数(默认为7天)
+      max-history: 20
+
+    #loggin
+    #logging:
+    #  level:
+    #    root: info
+    #    com.yupi.yupao: info
+    #  pattern:
+    #    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+    #    file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+    #  file:
+    #    # 日志文件名格式
+    #    name: 1.log
+    #    # 最大日志文件大小(默认为10MB，这里为了测试归档，暂时设置为2KB)
+    #    max-size: 2KB
+    #    # 要保留的日志备份的总大小(默认为0B)
+    #    total-size-cap: 1GB
+    #    # 保存存档日志文件的最大天数(默认为7天)
+    #    max-history: 20
+    #    pattern:
+    #      # 日志记录格式[组件名称] [时间戳] [日志级别] [类名.方法名] [消息文本]
+    #      file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+    #      # 根据文件大小归档，超过2KB自动归档，次日启动服务时也会自动归档
+    #      rolling-file-name: '%i.gz'
+    
+
+
