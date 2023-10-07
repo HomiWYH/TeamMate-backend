@@ -17,7 +17,7 @@ spring:
     username: root
     password: 123456
   application:
-    name: yupao-backend
+    name: teammate_backend
   main:
     banner-mode: off
     #swagger
@@ -72,7 +72,7 @@ logging:
     #logging:
     #  level:
     #    root: info
-    #    com.yupi.yupao: info
+    #    com.yupiyupao: info
     #  pattern:
     #    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
     #    file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'

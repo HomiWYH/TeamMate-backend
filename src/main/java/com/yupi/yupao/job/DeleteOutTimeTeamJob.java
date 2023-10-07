@@ -8,7 +8,6 @@ import com.yupi.yupao.service.TeamService;
 import com.yupi.yupao.service.UserTeamService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.Date;

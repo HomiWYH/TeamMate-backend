@@ -1,8 +1,6 @@
 package com.yupi.yupao.once;
 
 import com.yupi.yupao.mapper.UserMapper;
-import com.yupi.yupao.model.domain.User;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 

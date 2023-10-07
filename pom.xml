@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.yupi.yupao</groupId>
-    <artifactId>yupao-backend-master</artifactId>
+    <groupId>com.yupi</groupId>
+    <artifactId>TeamMate_backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>yupao-backend-master</name>
-    <description>yupao-backend-master</description>
+    <name>TeamMate_backend</name>
+    <description>TeamMate_backend</description>
 
     <properties>
         <java.version>1.8</java.version>
